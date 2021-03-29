@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<title>DM6122 Christina LUI (G1502112K)</title>
+
+<script src="lib/jquery-3.1.1.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/jquery-ui.min.js"></script>
+<script src="lib/bootstrap-toggle.min.js"></script>
+<link rel="stylesheet" href="lib/bootstrap.min.css">
+<link rel="stylesheet" href="lib/jquery-ui.min.css">
+<link rel="stylesheet" href="lib/bootstrap-toggle.min.css">
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2 controls">
+			<p id="fileselector">
+		        <label class="btn btn-default" for="upload-file-selector">
+		            <input id="upload-file-selector" type="file" name="files[]" multiple>
+		            <i class="fa_icon icon-upload-alt margin-correction"></i>upload file
+		        </label>
+		    </p>
+		    <p>
+		    	<label>rendering modes</label>
+				<input type="checkbox" id="toggle-mode" checked data-toggle="toggle" data-on="Uniform" data-off="Adaptive" data-onstyle="success" data-offstyle="info">
+		    </p>
+		    <p id="uniform">
+		    	<label for="spinner">tessellation</label>
+  				<input id="spinner-uniform" name="value">
+		    </p>
+		    <p id="adaptive">
+		    	<label for="spinner">tessellation (% of smoothness)</label>
+  				<input id="spinner-adaptive" name="value">
+		    </p>
+		    <p>
+		    	<label>Show sampling points</label>
+				<input type="checkbox" id="toggle-points" data-toggle="toggle">
+		    </p>
+		    <p>
+		    	<label>Show control polygon</label>
+				<input type="checkbox" checked id="toggle-convex" data-toggle="toggle">
+		    </p>
+		    <p>
+		    	<label>Draw De Boor Net</label>
+		    	<h6>comma separated e.g. (0.3,0.6)</h6>
+				<input type="text" id="deboor" class="form-control"/>
+		    </p>
+		    <table>
+		    	<tr>
+		    		<td>Degree</td>
+		    		<td id="degree"></td>
+		    	</tr>
+		    	<tr>
+		    		<td>Order</td>
+		    		<td id="order"></td>
+		    	</tr>
+		    	<tr>
+		    		<td>Control Points</td>
+		    		<td id="cp"></td>
+		    	</tr>
+		    	<tr>
+		    		<td>Knots</td>
+		    		<td id="knots"></td>
+		    	</tr>
+		    </table>
+		</div>
+		<div class="col-md-8 canvas">
+			<canvas id="axis" width="900" height="700"></canvas>
+			<canvas id="convex" width="900" height="700"></canvas>
+			<canvas id="curve" width="900" height="700"></canvas>
+			<canvas id="points" width="900" height="700"></canvas>
+			<canvas id="bpoints" width="900" height="700"></canvas>
+			<canvas id="touch" width="900" height="700"></canvas>
+		</div>
+		<div class="col-md-2 drawing-board">
+			<p><button class="btn btn-default start-draw"><span class="glyphicon glyphicon-pencil"></span>&nbsp;DRAW</button></p>
+		    <p><label>Degree</label></p>
+		    <div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="cubic" value="3" checked>
+			    Cubic
+			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="degree-5" value="5">
+			    Degree 5
+			  </label>
+			</div>
+			<p><button class="btn btn-default clear-board"><span class="glyphicon glyphicon-erase"></span>&nbsp;CLEAR</button></p>
+			<p><button class="btn btn-default output"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;SHOW FORMAT</button></p>
+			<textarea id="console" readonly></textarea>
+			
+		</div>
+	</div>
+</div>
+<script src="curve.js"></script>
+</body>
+</html>

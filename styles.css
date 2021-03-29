@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+@import url("http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css");
+/* 
+    FORM STYLING
+*/
+#fileselector {
+    margin: 10px; 
+}
+#upload-file-selector {
+    display:none;   
+}
+.margin-correction {
+    margin-right: 10px;   
+}
+
+#drop_zone {
+    border: 2px dashed #bbb;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    font: 20pt bold 'Vollkorn';
+    color: #bbb;
+}
+
+.container-fluid{
+	margin-top: 40px;
+}
+
+.canvas{
+	position: relative;
+}
+
+canvas{
+	border: 1px solid #000;
+	position: absolute;
+	top: 0;
+}
+
+canvas#touch{
+	display: none;
+}
+
+canvas#points{
+	display: none;
+}
+
+p{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+h6{
+	text-align: center;
+    margin-top: 0;
+}
+
+p#adaptive{
+	display: none;
+}
+
+label{
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+td{
+	border: 1px solid #000;
+    max-width: 150px;
+    word-wrap: break-word;;
+}
+
+.ui-spinner{
+	width: 40%;
+}
+
+div.radio{
+	width: 40%;
+    margin: 0 auto;
+}
+
+textarea{
+	width: 100%;
+	height: 400px;
+	margin-top: 20px;
+}
